@@ -1,0 +1,16 @@
+{% extends 'base_signup.html' %}         <!--Для загрузки статичных файлов -->
+
+{% load bootstrap3 %}
+
+{% block title %}Вход{% endblock %}
+
+{% block reduction %}Страница входа пользователя{% endblock %}
+
+{% block content %}
+  <form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  <button type="submit" class="btn btn-malin pull-right">Войти</button>
+  </form>
+  <a href="{% url 'xiaomishop-sign-up' %}">Зарегистрироваться</a>
+{% endblock %}
