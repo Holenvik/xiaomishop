@@ -30,6 +30,8 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+CART_SESSION_ID = 'cart'
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'xiaomishopapp',
     'bootstrap3',
+    'cart',
+    'orders',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -65,6 +69,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                'cart.context_processors.cart',
             ],
         },
     },

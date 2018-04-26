@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <div class="row">
+        <h1>Ваш заказ</h1>
+        <ul>
+            {% for item in cart %}
+                <li>
+                    {{ item.quantity }}x {{ item.product.name }} </br>{{ item.total_price }} руб.
+                </li>
+            {% endfor %}
+        </ul>
+        <p>Сумма заказа: {{ cart.get_total_price }} руб.</p>
+    </div>
+    <div class="row">
+    <form action="." method="post" class="order-form">
+        {% bootstrap_form form %}
+        <p><input type="submit" value="Создать заказ"></p>
+        {% csrf_token %}
+    </form>
+    </div>
+</div>
+{% endblock %}

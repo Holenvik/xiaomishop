@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from xiaomishopapp.forms import UserForm, UserFormForEdit
 from .models import Category, Product
 
+from cart.forms import CartAddProductForm
 
 from django.contrib.auth.models import User
 from django.contrib import auth
@@ -89,3 +90,15 @@ def product_detail(request, id, slug, category_slug=None):
                     'username': auth.get_user(request).username,
                     'category': category,
                     'categories': categories,})
+
+
+
+
+def product_detail(request, id, slug):
+    product = get_object_or_404(Product,
+                                id=id,
+                                slug=slug,
+                                available=True)
+    cart_product_form = CartAddProductForm()
+    return render(request, 'xiaomishop/product/detail.html', {'product': product,
+                                                        'cart_product_form': cart_product_form})

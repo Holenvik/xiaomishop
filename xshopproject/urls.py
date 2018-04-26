@@ -22,7 +22,9 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
+
     url(r'^admin/', admin.site.urls),
+
     url(r'^$', views.home, name='home'),
 
     url(r'^xiaomishop/sign-in', auth_views.login,
@@ -41,8 +43,12 @@ urlpatterns = [
 
     url(r'^xiaomishop/sign-up/$', views.xiaomishop_sign_up, name = 'xiaomishop-sign-up'),
 
+
+    url(r'^orders/', include('orders.urls', namespace='orders')),
+
     url(r'^', include('xiaomishopapp.urls', namespace='xiaomishop')),
 
+    url(r'^cart/', include('cart.urls', namespace='cart')),
     #
 
 
