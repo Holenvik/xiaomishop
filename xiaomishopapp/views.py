@@ -84,9 +84,8 @@ def product_detail(request, id, slug, category_slug=None):
                                 id=id,
                                 slug=slug,
                                 available=True)
-    return render(request,
-                  'xiaomishop/product/detail.html',
-                  { 'product': product,
+    return render(request, 'xiaomishop/product/detail.html',
+                {   'product': product,
                     'username': auth.get_user(request).username,
                     'category': category,
                     'categories': categories,})

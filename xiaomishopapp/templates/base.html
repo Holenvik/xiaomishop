@@ -63,7 +63,9 @@
                       руб. {{ cart.get_total_price }}
                   </a>
               {% else %}
-                  Your cart is empty.
+              <a href="{% url "cart:cart_detail" %}">
+                Ваша корзина пуста
+              </a>
               {% endif %}
           {% endwith %}
         </li>
