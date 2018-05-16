@@ -24,20 +24,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/"><img src={% static "img/xiaomi.png" %} width="28" height="28"></a></a>
+      <a class="navbar-left" href="/"><img src={% static "img/xiaomi.png" %}></a>
     </div>
 
     <!-- Группируем ссылки, формы, выпадающее меню и прочие элементы -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
+        <li><a class="nav-items" href="{% url 'information:about' %}">О нас</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Категории <b class="caret"></b></a>
           <ul class="dropdown-menu">
             {% for c in categories %}
-                <li {% if category.slug == c.slug %}class="selected"{% endif %}>
-                    <a href="{{ c.get_absolute_url }}">{{ c.for_name_rusname }}</a>
+                <li {% if category.slug == c.slug %}class="selected" {% endif %}>
+                    <a href="{{ c.get_absolute_url }}" class = category>{{ c.for_name_rusname }}</a>
                 </li>
                 <li class="divider"></li>
             {% endfor %}
@@ -85,13 +84,165 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
 <div class="container-fluid">
-  <div class="row">
-    <div class = "col-lg-8 col-lg-offset-2  col-md-10 col-sm-10 content">
-      {% block page %}{% endblock %}
+    <div class="row col-lg-0">
+      <img src="{% static "img/main.jpg" %}" class="img-responsive mainpic ">
     </div>
 </div>
-{% block content %} {% endblock %}
+
+
+
+
+
+<div class="container">
+  <div class="row row-margin-bottom">
+    <div class="col-md-6">
+      <div class="lib-panel">
+        <div class="row box-shadow">
+          <div class="col-md-6">
+            <img class="lib-img-show" src="http://itchief.ru/assets/demo/image/image1-400-400.jpg">
+          </div>
+          <div class="col-md-6">
+            <div class="lib-row lib-header">
+              <a href="#">Lorem ipsum</a>
+              <div class="lib-header-seperator"></div>
+            </div>
+            <div class="lib-row lib-desc">
+              <p><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 11.01.2015</p>
+              <p>Omnis voluptas assumenda est, omnis voluptas nulla vero eos et expedita. Nulla vero eos et molestiae consequatur, vel eum iure reprehenderit. Quisquam est, omnis voluptas nulla vero eos et molestiae. Quibusdam et iusto odio dignissimos ducimus, qui perspiciatis.</p>
+              <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> 315 | <span class=" glyphicon glyphicon-comment" aria-hidden="true"></span> 7 | <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 1 | <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> +8 <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="lib-panel">
+        <div class="row box-shadow">
+          <div class="col-md-6">
+            <img class="lib-img-show" src="http://itchief.ru/assets/demo/image/image2-400-400.jpg">
+          </div>
+          <div class="col-md-6">
+            <div class="lib-row lib-header">
+              <a href="#">Lorem ipsum</a>
+              <div class="lib-header-seperator"></div>
+            </div>
+            <div class="lib-row lib-desc">
+              <p><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 12.04.2015</p>
+              <p>Omnis voluptas assumenda est, omnis voluptas nulla vero eos et expedita. Nulla vero eos et molestiae consequatur, vel eum iure reprehenderit. Quisquam est, omnis voluptas nulla vero eos et molestiae. Quibusdam et iusto odio dignissimos ducimus, qui perspiciatis.</p>
+              <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> 512 | <span class=" glyphicon glyphicon-comment" aria-hidden="true"></span> 8 | <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 3 | <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> +1 <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix visible-md-block"></div>
+    <div class="col-md-6">
+      <div class="lib-panel">
+        <div class="row box-shadow">
+          <div class="col-md-6">
+            <img class="lib-img-show" src="http://itchief.ru/assets/demo/image/image3-400-400.jpg">
+          </div>
+          <div class="col-md-6">
+            <div class="lib-row lib-header">
+              <a href="#">Lorem ipsum</a>
+              <div class="lib-header-seperator"></div>
+            </div>
+            <div class="lib-row lib-desc">
+              <p><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 13.06.2015</p>
+              <p>Omnis voluptas assumenda est, omnis voluptas nulla vero eos et expedita. Nulla vero eos et molestiae consequatur, vel eum iure reprehenderit. Quisquam est, omnis voluptas nulla vero eos et molestiae. Quibusdam et iusto odio dignissimos ducimus, qui perspiciatis.</p>
+              <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> 765 | <span class=" glyphicon glyphicon-comment" aria-hidden="true"></span> 9 | <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 4 | <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> +5 <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="lib-panel">
+        <div class="row box-shadow">
+          <div class="col-md-6">
+            <img class="lib-img-show" src="http://itchief.ru/assets/demo/image/image4-400-400.jpg">
+          </div>
+          <div class="col-md-6">
+            <div class="lib-row lib-header">
+              <a href="#">Lorem ipsum</a>
+              <div class="lib-header-seperator"></div>
+            </div>
+            <div class="lib-row lib-desc">
+              <p><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 15.07.2015</p>
+              <p>Omnis voluptas assumenda est, omnis voluptas nulla vero eos et expedita. Nulla vero eos et molestiae consequatur, vel eum iure reprehenderit. Quisquam est, omnis voluptas nulla vero eos et molestiae. Quibusdam et iusto odio dignissimos ducimus, qui perspiciatis.</p>
+              <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> 365 | <span class=" glyphicon glyphicon-comment" aria-hidden="true"></span> 5 | <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 2 | <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> +5 <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--Footer-->
+<footer class="page-footer font-small blue pt-4 mt-4">
+
+    <!--Footer Links-->
+    <div class="container-fluid text-center text-md-left" style="background-color:#2c2b29">
+        <div class="row">
+
+            <!--First column-->
+            <div class="col-md-6" style="color: white">
+                <h5 class="text-uppercase">Наши номера телефонов:</h5>
+                <p>+1234567890</p>
+                <p>+1234567890</p>
+                <p>+1234567890</p>
+            </div>
+            <!--/.First column-->
+
+            <!--Second column-->
+            <div class="col-md-6" style="color: white">
+                <h5 class="text-uppercase">Мы в соц. сетях</h5>
+                <ul class="list-unstyled" style="color: white">
+                    <li>
+                        <a href="#!" class="footerlink">VK</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="footerlink">Instagram</a>
+                    </li>
+                    <li>
+                        <a href="#!"class="footerlink">Twitter</a>
+                    </li>
+                    <li>
+                        <a class="footerlink" href="#!" >Facebook</a>
+                    </li>
+                </ul>
+            </div>
+            <!--/.Second column-->
+        </div>
+    </div>
+    <!--/.Footer Links-->
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3 text-center" style="background-color: #2c2b29">
+        <p style="color: white">© 2018 Copyright: </p>
+        <a class="footerlinktop" href="https://vk.com/im?sel=299849684"> ТОП ДИЗИГН ИН ЗЕ ВОРЛД </a>
+    </div>
+    <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>

@@ -7,9 +7,10 @@
 <div class="container">
     <div class="product-detail">
         <img class = "img-responsive" src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
-
+        <div class="embed-responsive embed-responsive-4by3">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/nMVJxTcU8Kg" frameborder="0" allowfullscreen></iframe>
+        </div>
           <h1>{{ product.name }}</h1>
-          <h2><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h2>
           <p class="price">{{ product.price }} руб.</p>
           <form action="{% url "cart:cart_add" product.id %}" method="post">
                 {{ cart_product_form }}
@@ -17,8 +18,12 @@
                 <input type="submit" value="Добавить в корзину">
           </form>
         <div class="row">
-          {{ product.description|linebreaks }}
+          <div class="well well-lg" >
+            {{ product.description|linebreaks }}
+          </div>
         </div>
     </div>
 </div>
+
+
 {% endblock %}

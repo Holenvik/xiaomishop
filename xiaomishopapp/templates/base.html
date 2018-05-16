@@ -15,7 +15,7 @@
 
 </head>
 <body>
-  <nav class="navbar navbar-default" role="navigation">
+  <nav class="navbar navbar-default navstyle" role="navigation">
   <div class="container-fluid">
     <!-- Название компании и кнопка, которая отображается для мобильных устройств группируются для лучшего отображения при свертывании -->
     <div class="navbar-header">
@@ -25,13 +25,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/"><img src={% static "img/xiaomi.png" %} width="28" height="28"></a></a>
+      <a class="navbar-left" href="/"><img src={% static "img/xiaomi.png" %}></a>
     </div>
 
     <!-- Группируем ссылки, формы, выпадающее меню и прочие элементы -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link</a></li>
+        <li class="active"><a href="{% url "information:about" %}">О нас</a></li>
         <li><a href="#">Link</a></li>
 
         <li class="dropdown">
@@ -89,9 +89,64 @@
 <div class="container-fluid">
   <div class="row">
     <div class = "col-lg-8 col-lg-offset-2  col-md-10 col-sm-10 content">
-      {% block page %}{% endblock %}
+      {% block content %} {% endblock %}
     </div>
+  </div>
 </div>
-{% block content %} {% endblock %}
+
+
+
+
+<!--Footer-->
+<footer class="page-footer font-small blue pt-4 mt-4">
+
+    <!--Footer Links-->
+    <div class="container-fluid text-center text-md-left" style="background-color:#212121">
+        <div class="row">
+
+            <!--First column-->
+            <div class="col-md-6" style="color: white">
+                <h5 class="text-uppercase">Наши номера телефонов:</h5>
+                <p>+1234567890</p>
+                <p>+1234567890</p>
+                <p>+1234567890</p>
+            </div>
+            <!--/.First column-->
+
+            <!--Second column-->
+            <div class="col-md-6" style="color: white">
+                <h5 class="text-uppercase">Мы в соц. сетях</h5>
+                <ul class="list-unstyled" style="color: white">
+                    <li>
+                        <a href="#!" class="footerlink">VK</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="footerlink">Instagram</a>
+                    </li>
+                    <li>
+                        <a href="#!"class="footerlink">Twitter</a>
+                    </li>
+                    <li>
+                        <a class="footerlink" href="#!" >Facebook</a>
+                    </li>
+                </ul>
+            </div>
+            <!--/.Second column-->
+        </div>
+    </div>
+    <!--/.Footer Links-->
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3 text-center" style="background-color: #212121">
+        <p style="color: white">© 2018 Copyright: </p>
+        <a class="footerlinktop" href="https://vk.com/im?sel=299849684"> ТОП ДИЗИГН ИН ЗЕ ВОРЛД </a>
+    </div>
+    <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->
+
+
+
 </body>
 </html>

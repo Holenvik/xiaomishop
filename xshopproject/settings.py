@@ -30,6 +30,15 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+
+
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_HOST_USER = 'kekscheburek'
+EMAIL_HOST_PASSWORD = 'MegoDniwe1976'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+
 CART_SESSION_ID = 'cart'
 
 INSTALLED_APPS = [
@@ -43,6 +52,7 @@ INSTALLED_APPS = [
     'bootstrap3',
     'cart',
     'orders',
+    'information',
 ]
 
 MIDDLEWARE_CLASSES = [

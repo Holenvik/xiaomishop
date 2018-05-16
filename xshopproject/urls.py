@@ -49,7 +49,10 @@ urlpatterns = [
     url(r'^', include('xiaomishopapp.urls', namespace='xiaomishop')),
 
     url(r'^cart/', include('cart.urls', namespace='cart')),
-    #
+
+    url(r'^information/', include('information.urls', namespace='information')),
+
+
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
