@@ -5,12 +5,14 @@
 {% endblock %}
 {% block content %}
 
-
+<div class="row">
   {% for product in products %}
-      <div class="col-md-4 col-sm-6 col-xs-12 listproducts">
+
+
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 listproducts">
         <div class="thumbnail">
-          <a href="{{ product.get_absolute_url }}"></a>
-            <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+          <a href="{{ product.get_absolute_url }}">
+            <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}" class = "above">
           </a>
           <div class="caption">
             <h3><a href="{{ product.get_absolute_url }}"><p class="text-center item-name">{{ product.name }}</p></a><br></h3>
@@ -21,6 +23,28 @@
 
 
   {% endfor %}
+</div>
 
+  <nav class="text-center col-lg-12">
+    <ul class="pagination">
 
+        <li>
+          {% if products.has_previous %}
+              <a href="?page={{ products.previous_page_number }}" class="pagination-style">←</a>
+          {% endif %}
+        </li>
+        <li >
+          <span class="pagination-style">
+              Страница {{ products.number }} из {{ products.paginator.num_pages }}
+          </span>
+        </li>
+        <li>
+          {% if products.has_next %}
+              <a href="?page={{ products.next_page_number }}" class="pagination-style">→</a>
+          {% endif %}
+        </li>
+
+</nav>
+
+</div>
 {% endblock %}

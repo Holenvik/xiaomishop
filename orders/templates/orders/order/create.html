@@ -3,7 +3,6 @@
 {% block title %}Оформление заказа{% endblock %}
 
 {% block content %}
-<div class="container">
   <div class="well well-lg" >
     <div class="row">
         <h1>Ваш заказ</h1>
@@ -19,10 +18,11 @@
     <div class="row">
     <form action="." method="post" class="order-form">
         {% bootstrap_form form %}
-        <button type="submit" class="btn btn-malin btn-lg">Создать заказ</button>
+        <div class="adaptive-button">
+          <button type="submit" class="btn btn-malin">Создать заказ</button>
+        </div>
         {% csrf_token %}
     </form>
     </div>
   </div>
-</div>
 {% endblock %}

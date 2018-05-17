@@ -2,6 +2,37 @@ body{
   background-color: #f6f5f3;
 }
 
+.table-responsive{
+  width: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.thumbnail{
+  overflow: hidden;
+}
+
+.above {
+ -moz-transition: all 1s ease-out;
+ -o-transition: all 1s ease-out;
+ -webkit-transition: all 1s ease-out;
+ }
+
+.above:hover{
+ -webkit-transform: scale(1.05);
+ -moz-transform: scale(1.05);
+ -o-transform: scale(1.05);
+ }
+
+
+.pagination{
+  font-size: 15pt;
+}
+
+.pagination-style{
+  color: #ff6709;
+}
+
 .navbar-default-color{
   background-color: white;
 }
@@ -39,17 +70,7 @@ body{
   font-family: 'Do Hyeon', sans-serif;
   background-color: #2c3338;
 }
-.btn-malin {
-  font-family: 'Do Hyeon', sans-serif;
-  color: #FF7043;
-  background-color: white;
-  border-color: #FF7043;
-}
-.btn-malin:hover{
-  font-family: 'Do Hyeon', sans-serif;
-  background-color: #FF7043;
-  color: white;
-}
+
 
 .navbar{
   margin:0;
@@ -99,6 +120,90 @@ body{
 
 
 
+@media (max-width: 767px) {
+        /*xs*/
+        .adaptive-button{
+          text-align: center;
+        }
+
+        .btn-malin {
+          font-family: 'Do Hyeon', sans-serif;
+          font-size: 18px;
+          text-align: center;
+          color: #FF7043;
+          background-color: white;
+          border-color: #FF7043;
+          margin-bottom: 30px;
+          margin-top: 15px;
+        }
+        .btn-malin:hover{
+          font-family: 'Do Hyeon', sans-serif;
+          background-color: #FF7043;
+          color: white;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+        /*sm*/
+        .adaptive-button{
+          text-align: center;
+        }
+
+        .btn-malin {
+          font-family: 'Do Hyeon', sans-serif;
+          font-size: 18px;
+          color: #FF7043;
+          background-color: white;
+          border-color: #FF7043;
+          margin-bottom: 30px;
+          margin-top: 15px;
+        }
+        .btn-malin:hover{
+          font-family: 'Do Hyeon', sans-serif;
+          background-color: #FF7043;
+          color: white;
+        }
+    }
+    @media (min-width: 992px) and (max-width: 1199px) {
+        /*md*/
+        .adaptive-button{
+          text-align: center;
+        }
+
+        .btn-malin {
+          font-family: 'Do Hyeon', sans-serif;
+          font-size: 18px;
+          color: #FF7043;
+          background-color: white;
+          border-color: #FF7043;
+          margin-bottom: 30px;
+          margin-top: 15px;
+        }
+        .btn-malin:hover{
+          font-family: 'Do Hyeon', sans-serif;
+          background-color: #FF7043;
+          color: white;
+        }
+    }
+    @media (min-width: 1200px) {
+        /*lg*/
+        .adaptive-button{
+          text-align: center;
+        }
+        .btn-malin {
+          font-family: 'Do Hyeon', sans-serif;
+          font-size: 20px;
+          color: #FF7043;
+          background-color: white;
+          border-color: #FF7043;
+          margin-bottom: 30px;
+          margin-top: 15px;
+        }
+        .btn-malin:hover{
+          font-family: 'Do Hyeon', sans-serif;
+          background-color: #FF7043;
+          color: white;
+        }
+    }
 
 
 
@@ -108,7 +213,7 @@ body{
 
 
 
-.lib-panel {
+    .lib-panel {
   margin-bottom: 20px;
   padding: 0 20px 0 20px;
 }
