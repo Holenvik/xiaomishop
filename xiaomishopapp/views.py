@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from xiaomishopapp.forms import UserForm, UserFormForEdit
 from .models import Category, Product
+from articles.models import Article
 
 from cart.forms import CartAddProductForm
 
@@ -34,11 +35,26 @@ def home(request):
 
 
 def xiaomishop_home(request, category_slug=None):
+    articles = Article.objects.all()
     category = None
     categories = Category.objects.all()
     if category_slug:
         category = get_object_or_404(Category, slug=category_slug)
+
+    paginator = Paginator(articles, 4) # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    try:
+        articles = paginator.page(page)
+    except PageNotAnInteger:
+            # If page is not an integer, deliver first page.
+        articles = paginator.page(1)
+    except EmptyPage:
+            # If page is out of range (e.g. 9999), deliver last page of results.
+        articles = paginator.page(paginator.num_pages)
+
     return render(request, 'xiaomishop/home.html', {
+            'articles': articles,
             'username': auth.get_user(request).username,
             'category': category,
             'categories': categories,} )
@@ -75,7 +91,7 @@ def product_list(request, category_slug=None):
         products = products.filter(category=category)
 
 
-    paginator = Paginator(products, 2) # Show 25 contacts per page
+    paginator = Paginator(products, 6) # Show 25 contacts per page
 
     page = request.GET.get('page')
     try:

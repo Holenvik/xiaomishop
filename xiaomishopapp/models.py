@@ -35,6 +35,7 @@ class Product(models.Model):
     available = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    videolink = models.CharField(max_length = 200)
 
     class Meta:
         verbose_name = 'Товар'

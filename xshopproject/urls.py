@@ -52,6 +52,7 @@ urlpatterns = [
 
     url(r'^information/', include('information.urls', namespace='information')),
 
+    url(r'^articles/', include('articles.urls', namespace='articles')),
 
 
 

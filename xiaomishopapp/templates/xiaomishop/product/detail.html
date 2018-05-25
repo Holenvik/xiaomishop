@@ -6,14 +6,14 @@
 {% block content %}
         <img class = "img-responsive" src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
         <div class="embed-responsive embed-responsive-4by3">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/nMVJxTcU8Kg" frameborder="0" allowfullscreen></iframe>
+          <iframe class="embed-responsive-item" src="{{ product.videolink }}" frameborder="0" allowfullscreen></iframe>
         </div>
           <h1>{{ product.name }}</h1>
-          <p class="price">{{ product.price }} руб.</p>
+          <h2 class="price">{{ product.price }} руб.</h2>
           <form action="{% url "cart:cart_add" product.id %}" method="post">
                 {{ cart_product_form }}
                 {% csrf_token %}
-                <input type="submit" value="Добавить в корзину">
+                <input class="btn btn-malin" type="submit" value="Добавить в корзину">
           </form>
         <div class="row">
           <div class="well well-lg" >

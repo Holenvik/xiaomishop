@@ -24,13 +24,13 @@
 
   {% endfor %}
 </div>
-
+<div class="container-fluid">
   <nav class="text-center col-lg-12">
     <ul class="pagination">
 
         <li>
           {% if products.has_previous %}
-              <a href="?page={{ products.previous_page_number }}" class="pagination-style">←</a>
+              <a href="?page={{ products.previous_page_number }}" class="pagination-style"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a>
           {% endif %}
         </li>
         <li >
@@ -40,11 +40,11 @@
         </li>
         <li>
           {% if products.has_next %}
-              <a href="?page={{ products.next_page_number }}" class="pagination-style">→</a>
+              <a href="?page={{ products.next_page_number }}" class="pagination-style"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
           {% endif %}
         </li>
-
-</nav>
-
+    </ul>
+  </nav>
 </div>
+
 {% endblock %}
