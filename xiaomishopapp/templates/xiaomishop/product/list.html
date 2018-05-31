@@ -10,7 +10,7 @@
 
 
       <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 listproducts">
-        <div class="thumbnail">
+        <div class="thumbnail box-shadow">
           <a href="{{ product.get_absolute_url }}">
             <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}" class = "above">
           </a>

@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block title %}
-    {% if category %}{{ category.title }}{% else %}Products{% endif %}
+    {% if product %}{{ product.name }}{% else %}Products{% endif %}
 {% endblock %}
 {% block content %}
-        <img class = "img-responsive" src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+        <img class = "img-responsive box-shadow" src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
         <div class="embed-responsive embed-responsive-4by3">
           <iframe class="embed-responsive-item" src="{{ product.videolink }}" frameborder="0" allowfullscreen></iframe>
         </div>
@@ -16,7 +16,7 @@
                 <input class="btn btn-malin" type="submit" value="Добавить в корзину">
           </form>
         <div class="row">
-          <div class="well well-lg" >
+          <div class="well well-lg box-shadow" >
             {{ product.description|linebreaks }}
           </div>
         </div>

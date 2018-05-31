@@ -70,19 +70,19 @@
   <div id="carousel" class="carousel slide" data-ride="carousel">
     <!-- Индикаторы -->
     <ol class="carousel-indicators">
-      <li data-target="#carousel" data-slide-to="0" class="active"></li>
-      <li data-target="#carousel" data-slide-to="1"></li>
+      <li data-target="#carousel" data-slide-to="0"></li>
+      <li data-target="#carousel" data-slide-to="1" class="active"></li>
       <li data-target="#carousel" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
+      <div class="item">
+        <img src="{% static "img/MiPortable.png" %}">
+      </div>
       <div class="item active">
-        <a href="http://127.0.0.1:8000/xiaomishop/3/xiaomi-mi-6/"><img src="{% static "img/main.jpg" %}"></a>
+        <img src="{% static "img/mix2.png" %}">
       </div>
       <div class="item">
-        <img src="{% static "img/main.jpg" %}">
-      </div>
-      <div class="item">
-        <img src="{% static "img/main.jpg" %}">
+        <a href="http://127.0.0.1:8000/xiaomishop/3/xiaomi-mi-6/"><img src="{% static "img/MiLedTV.png" %}"></a>
       </div>
     </div>
     <!-- Элементы управления -->
@@ -111,7 +111,7 @@
       <div class="lib-panel">
         <div class="row box-shadow">
           <div class="col-md-6">
-            <img class="lib-img-show" src="{{ article.image.url }}" style="width: 270px; height: 270px">
+            <img class="lib-img-show img-responsive" src="{{ article.image.url }}" style="width: 280px; height: 280px">
           </div>
           <div class="col-md-6">
             <div class="lib-row lib-header">
@@ -160,9 +160,10 @@
             <!--First column-->
             <div class="col-md-6" style="color: white">
                 <h5 class="text-uppercase">Наши номера телефонов:</h5>
-                <p>+1234567890</p>
-                <p>+1234567890</p>
-                <p>+1234567890</p>
+                <p>+375297685461</p>
+                <p>+375297685461</p>
+                <p>+375297685461</p>
+                </h5>
             </div>
             <!--/.First column-->
 
