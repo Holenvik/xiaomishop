@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'orders',
     'information',
     'articles',
+    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE_CLASSES = [

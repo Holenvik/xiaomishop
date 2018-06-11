@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, render_to_response
 from django.contrib.auth.decorators import login_required
 from xiaomishopapp.forms import UserForm, UserFormForEdit
 from .models import Category, Product
@@ -15,7 +15,18 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 
-
+def search(request, category_slug=None):
+        categories = Category.objects.all()
+        if category_slug:
+            category = get_object_or_404(Category, slug=category_slug)
+        if 'q' in request.GET and request.GET['q']:
+            q = request.GET['q']
+            products = Product.objects.filter(name__icontains=q)
+            return render(request,'xiaomishop/search.html',
+                {'products': products,
+                 'query': q,
+                 'categories': categories,
+                                    })
 
 def account(request, category_slug=None):
     category = None
@@ -41,7 +52,7 @@ def xiaomishop_home(request, category_slug=None):
     if category_slug:
         category = get_object_or_404(Category, slug=category_slug)
 
-    paginator = Paginator(articles, 4) # Show 25 contacts per page
+    paginator = Paginator(articles, 6) # Show 25 contacts per page
 
     page = request.GET.get('page')
     try:

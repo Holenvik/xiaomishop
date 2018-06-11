@@ -11,13 +11,13 @@
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}"/>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
 </head>
 <body>
-  <nav class="navbar navbar-default" role="navigation">
+  <nav class="navbar navbar-default navstyle" role="navigation">
   <div class="container-fluid">
     <!-- Название компании и кнопка, которая отображается для мобильных устройств группируются для лучшего отображения при свертывании -->
     <div class="navbar-header">
@@ -35,6 +35,7 @@
       <ul class="nav navbar-nav">
         <li class="nav-items"><a href="{% url 'information:about' %}">О нас</a></li>
         <li><a class="nav-items" href="{% url 'information:delivery' %}">Доставка</a></li>
+
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Категории <b class="caret"></b></a>
           <ul class="dropdown-menu">
@@ -74,8 +75,15 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+<div class="container-fluid">
+  <div class="row">
+    <div class = "content">
+      {% block content %} {% endblock %}
+    </div>
+  </div>
+</div>
 
-{% block content %} {% endblock %}
+
 
 
 <!--Footer-->
@@ -128,8 +136,6 @@
 
 </footer>
 <!--/.Footer-->
-
-
 
 
 

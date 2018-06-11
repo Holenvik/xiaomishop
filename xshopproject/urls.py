@@ -39,10 +39,11 @@ urlpatterns = [
         {'next_page': '/'},
         name = 'xiaomishop-sign-out'),
 
-    url(r'^xiaomishop/$', views.xiaomishop_home, name = 'xiaomishop-home'), #REDIRECT TO HOME PAGE
+    url(r'^xiaomishop/$', views.xiaomishop_home, name = 'xiaomishop-dhome'), #REDIRECT TO HOME PAGE
 
     url(r'^xiaomishop/sign-up/$', views.xiaomishop_sign_up, name = 'xiaomishop-sign-up'),
 
+    url(r'^xiaomishop/search/$', views.search, name = 'xiaomishop-search'),
 
     url(r'^orders/', include('orders.urls', namespace='orders')),
 

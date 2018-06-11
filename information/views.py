@@ -23,3 +23,13 @@ def delivery(request, category_slug=None):
                         'category': category,
                         'categories': categories,
                         })
+def guide(request, category_slug=None):
+    category = None
+    categories = Category.objects.all()
+    if category_slug:
+        category = get_object_or_404(Category, slug=category_slug)
+    return render(request, 'information/guide.html',
+                        {
+                        'category': category,
+                        'categories': categories,
+                        })

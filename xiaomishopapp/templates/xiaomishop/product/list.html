@@ -28,9 +28,9 @@
   <nav class="text-center col-lg-12">
     <ul class="pagination">
 
-        <li>
+        <li class="pagination-controle-left">
           {% if products.has_previous %}
-              <a href="?page={{ products.previous_page_number }}" class="pagination-style"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a>
+              <a href="?page={{ products.previous_page_number }}" class="pagination-controle-left"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a>
           {% endif %}
         </li>
         <li >
@@ -38,7 +38,7 @@
               Страница {{ products.number }} из {{ products.paginator.num_pages }}
           </span>
         </li>
-        <li>
+        <li class="pagination-controle-right">
           {% if products.has_next %}
               <a href="?page={{ products.next_page_number }}" class="pagination-style"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
           {% endif %}
